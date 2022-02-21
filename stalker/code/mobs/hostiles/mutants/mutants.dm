@@ -21,10 +21,7 @@
 /*
 /mob/living/simple_animal/hostile/mutant/Move(atom/NewLoc, direct)
 	if(get_area(NewLoc).safezone)
-		if(src.client && (src.client.prefs.chat_toggles & CHAT_LANGUAGE))
-			src << "<span class='warning'>You can't be here!</span>"
-		else
-			src << "<span class='warning'>Вы не можете находитьcя в этой зоне!</span>"
+		src << "<span class='warning'>You can't be here!</span>"
 		return 0
 	return ..()
 */

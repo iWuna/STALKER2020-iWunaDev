@@ -4,8 +4,7 @@
 
 /obj/item/reagent_containers/food/snacks/stalker/konserva
 	name = "tourist delight"
-	desc = "Консервы \"Радость туриста\" с растащенного сталкерами армейского продовольстенного склада. Срок годности вроде бы не истёк."
-	eng_desc = "These cans are supposed to be from the Army Warehouses ransacked by stalkers It is hard to say for sure what's in it because of no sticker present. But most likely its shelf life hasn't ended yet."
+	desc = "These cans are supposed to be from the Army Warehouses ransacked by stalkers It is hard to say for sure what's in it because of no sticker present. But most likely its shelf life hasn't ended yet."
 	icon_state = "konserva"
 	w_class = 2
 	wrapped = 1
@@ -24,11 +23,8 @@
 /obj/item/reagent_containers/food/snacks/stalker/konserva/proc/Unwrap(mob/user)
 	icon_state = icon_state_opened
 	desc = desc_opened
-	if(user.client && (user.client.prefs.chat_toggles & CHAT_LANGUAGE))
-		user << "<span class='notice'>You open the package.</span>"
-	else
-		user << "<span class='notice'>Вы вскрываете упаковку.</span>"
 	wrapped = 0
+	to_chat(user, "<span class='notice'>You open the package.</span>")
 
 /obj/item/trash/konserva
 	name = "empty can"
@@ -41,8 +37,7 @@
 
 /obj/item/reagent_containers/food/snacks/stalker/konserva/shproti
 	name = "shproti"
-	desc = "Рижские шпроты."
-	eng_desc = "Rigan sprats."
+	desc = "Rigan sprats."
 	icon = 'stalker/icons/food.dmi'
 	icon_state = "shproti0"
 	icon_state_opened = "shproti1"
@@ -59,15 +54,14 @@
 
 /obj/item/reagent_containers/food/snacks/stalker/konserva/soup
 	name = "soup"
-	desc = "Готовый законсервированный суп по-домашнему."
-	eng_desc = "Just-add-water homemade-like soup."
+	desc = "Just-add-water homemade-like soup."
 	//weight = 0.7
 	icon = 'stalker/icons/food.dmi'
 	icon_state = "soup0"
 	icon_state_opened = "soup1"
 	list_reagents = list("nutriment" = 20, "vitamin" = 4, "omnizine" = 1)
 	trash = /obj/item/trash/konserva/soup
-	desc_opened = "выглядит аппетитно."
+	desc_opened = "Looks tasty."
 
 /obj/item/trash/konserva/soup
 	name = "empty can"
@@ -75,15 +69,15 @@
 	icon_state = "soup2"
 
 /obj/item/reagent_containers/food/snacks/stalker/konserva/bobi
-	name = "bobi"
-	desc = "Консервы \"Бобовый Сюрприз\", сносно."
+	name = "beans"
+	desc = "Консервы \"Сюрприз Вуны\", сносно."
 	eng_desc = "Food can \"Bean Surprise\"."
 	icon = 'stalker/icons/food.dmi'
 	icon_state = "bobi0"
 	icon_state_opened = "bobi1"
 	list_reagents = list("nutriment" = 17, "vitamin" = 3, "omnizine" = 0.75)
 	trash = /obj/item/trash/konserva/bobi
-	desc_opened = "Выглядит аппетитно."
+	desc_opened = "Looks tasty."
 
 /obj/item/trash/konserva/bobi
 	name = "empty can"
@@ -179,9 +173,8 @@
 
 /obj/item/storage/box/MRE
 	name = "MRE"
-	desc = "Армейский ИРП рассчитанный на сутки."
-	eng_desc = "Ukrainian army MRE."
-	var/desc_opened = "Открытый Армейский ИРП рассчитанный на сутки."
+	desc = "Ukrainian army MRE, tasty and contains some crackers."
+	var/desc_opened = "Opened Ukrainian army MRE with a lot of tasty things inside."
 	icon = 'stalker/icons/food.dmi'
 	icon_state = "box1"
 	var/icon_state_opened = "box3"
@@ -213,10 +206,7 @@
 /obj/item/storage/box/MRE/proc/Unwrap(mob/user)
 	icon_state = icon_state_opened
 	//desc = desc_opened
-	if(user.client && (user.client.prefs.chat_toggles & CHAT_LANGUAGE))
-		user << "<span class='notice'>You unwrap the package</span>"
-	else
-		user << "<span class='notice'>Вы вскрываете упаковку</span>"
+	user << "<span class='notice'>You unwrap the package</span>"
 	wrapped = 0
 
 /obj/item/reagent_containers/food/snacks/stalker/konserva/galets

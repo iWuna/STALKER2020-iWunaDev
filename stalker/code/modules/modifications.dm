@@ -754,10 +754,7 @@ var/id_ = 0
 	var/dat_
 	if((M.id in modificated.modifications) && (M.tier == modificated.modifications[M.id] + 1))
 		if(M.SpecialCheck(modificated))
-			if(H.client.prefs.chat_toggles & CHAT_LANGUAGE)
-				dat_ += "<tr><td><b>[M.name]</b></td><td><A href='?src=\ref[src];upgrade=\ref[M]'>UPGRADE</A></td></tr><tr><td style='padding-left:10px'>[M.eng_desc]</td><td>[M.cost]</td></tr>"
-			else
-				dat_ += "<tr><td><b>[M.name]</b></td><td><A href='?src=\ref[src];upgrade=\ref[M]'>АПГРЕЙД</A></td></tr><tr><td style='padding-left:10px'>[M.desc]</td><td>[M.cost]</td></tr>"
+			dat_ += "<tr><td><b>[M.name]</b></td><td><A href='?src=\ref[src];upgrade=\ref[M]'>UPGRADE</A></td></tr><tr><td style='padding-left:10px'>[M.eng_desc]</td><td>[M.cost]</td></tr>"
 	return dat_
 
 /obj/structure/stalker/modification_table/Topic(href, href_list)

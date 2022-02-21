@@ -565,10 +565,7 @@
 
 /mob/living/Move(atom/newloc, direct)
 	if((stat != DEAD) && get_area(newloc).safezone && !("stalker_forces" in faction))
-		if(src.client && (src.client.prefs.chat_toggles & CHAT_LANGUAGE))
-			to_chat(src, "<span class='warning'>You can't be here!</span>")
-		else
-			to_chat(src, "<span class='warning'>Вам сюда нельзя!</span>")
+		to_chat(src, "<span class='warning'>You can't be here!</span>")
 		return 0
 
 	if (buckled && buckled.loc != newloc) //not updating position
@@ -770,10 +767,7 @@
 	var/area/B = get_area(src.loc)
 	var/area/C = get_area(who.loc)
 	if(B.safezone || C.safezone)
-		if(src.client && (src.client.prefs.chat_toggles & CHAT_LANGUAGE))
-			to_chat (src, "<span class='warning'>You can't unequip people in the safezone!</span>")
-		else
-			to_chat (src, "<span class='warning'>Вы не можете раздевать людей в этой зоне!</span>")
+		to_chat (src, "<span class='warning'>You can't unequip people in the safezone!</span>")
 		return
 
 	if(!what.canStrip(who))

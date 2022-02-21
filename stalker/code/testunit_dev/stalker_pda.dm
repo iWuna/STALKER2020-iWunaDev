@@ -780,159 +780,153 @@ var/global/global_lentahtml = ""
 			mode = 2
 			get_asset_datum(/datum/asset/simple/encyclopedia).send(H)
 			if(href_list["page"])
-				if(H.client.prefs.chat_toggles & CHAT_LANGUAGE)
-					switch(href_list["page"])
-						if("Zone")
-							article_title = "Zone"
-							article_img = "nodata.gif"
-							article_img_width = 179
-							article_img_height = 128
-							article_text = "The Zone of Alienation is the 60 km wide area of exclusion that was set up around the Chernobyl NPP following the 1986 disaster and extended by the second Chernobyl disaster in 2006."
+				switch(href_list["page"])
+					if("Zone")
+						article_title = "Zone"
+						article_img = "nodata.gif"
+						article_img_width = 179
+						article_img_height = 128
+						article_text = "The Zone of Alienation is the 60 km wide area of exclusion that was set up around the Chernobyl NPP following the 1986 disaster and extended by the second Chernobyl disaster in 2006."
 
-						if("Backwater")
-							article_title = "Backwater"
-							article_img = "backwater"
-							article_img_width = 200
-							article_img_height = 125
-							article_text = "Backwater, also called Zaton, is mainly set in a swampy area, with a few industrial factories scattered around it and derelict, grounded boats, some dating back before the incident. From the outlying structures and sizable number of grounded boats and tankers around, Backwater appears to have been drained of its water sometime after the Chernobyl incident, most likely to contain the radiation contamination in the water. A free bar for Stalkers is run by Beard, in the wreck of a tanker – the Skadovsk."
+					if("Backwater")
+						article_title = "Backwater"
+						article_img = "backwater"
+						article_img_width = 200
+						article_img_height = 125
+						article_text = "Backwater, also called Zaton, is mainly set in a swampy area, with a few industrial factories scattered around it and derelict, grounded boats, some dating back before the incident. From the outlying structures and sizable number of grounded boats and tankers around, Backwater appears to have been drained of its water sometime after the Chernobyl incident, most likely to contain the radiation contamination in the water. A free bar for Stalkers is run by Beard, in the wreck of a tanker – the Skadovsk."
 
-						if("Anomalies")
-							article_title = "Anomalies"
-							article_img = "nodata.gif"
-							article_img_width = 179
-							article_img_height = 128
-							article_text = "After the second Chernobyl disaster, the Zone was littered with spots where the laws of nature and physics had been corrupted. These small oddities are called anomalies. They are hazardous, often deadly, towards human beings and other creatures as they can deliver electric shocks or burn, corrode and distort physical objects. Most anomalies produce visible air or light distortions, so their extent can be determined by throwing anything that is made of metal, like bolts, to trigger them. The anomalies seem to emit a powerful magnetic field, so it is logical to assume that the anomalies are triggered by anything made of metal that enters the magnetic field. Because vertebrate life on earth has iron-based blood, those creatures with enough body mass are capable of triggering the anomalies."
+					if("Anomalies")
+						article_title = "Anomalies"
+						article_img = "nodata.gif"
+						article_img_width = 179
+						article_img_height = 128
+						article_text = "After the second Chernobyl disaster, the Zone was littered with spots where the laws of nature and physics had been corrupted. These small oddities are called anomalies. They are hazardous, often deadly, towards human beings and other creatures as they can deliver electric shocks or burn, corrode and distort physical objects. Most anomalies produce visible air or light distortions, so their extent can be determined by throwing anything that is made of metal, like bolts, to trigger them. The anomalies seem to emit a powerful magnetic field, so it is logical to assume that the anomalies are triggered by anything made of metal that enters the magnetic field. Because vertebrate life on earth has iron-based blood, those creatures with enough body mass are capable of triggering the anomalies."
 
-						if("Electro")
-							article_title = "Electro"
-							article_img = "nodata.gif"
-							article_img_width = 179
-							article_img_height = 128
-							article_text = "An anomalous formation, roughly 10 meters in diameter, accumulating large quantities of static electricity. When triggered, the anomaly bursts into a storm of arcing electricity nearly always lethal to all living beings. Easily recognizable by the blue gas it emits, along with the endless arcing of small bolts of electricity in the vicinity, the Electro holds no distinction for what crosses its event horizon, be it a human, a mutants or an inanimate object, and discharges as soon as anything gets too close."
+					if("Electro")
+						article_title = "Electro"
+						article_img = "nodata.gif"
+						article_img_width = 179
+						article_img_height = 128
+						article_text = "An anomalous formation, roughly 10 meters in diameter, accumulating large quantities of static electricity. When triggered, the anomaly bursts into a storm of arcing electricity nearly always lethal to all living beings. Easily recognizable by the blue gas it emits, along with the endless arcing of small bolts of electricity in the vicinity, the Electro holds no distinction for what crosses its event horizon, be it a human, a mutants or an inanimate object, and discharges as soon as anything gets too close."
 
-						if("Vortex")
-							article_title = "Vortex"
-							article_img = "nodata.gif"
-							article_img_width = 179
-							article_img_height = 128
-							article_text = "An anomaly of presumably gravitational nature. When triggered, the tremendous power of the Vortex drags everything within the radius 10-15 meters towards the center. Victims drawn into the core have little to no chance of survival: their bodies are quickly constricted into a tight lump, only to be blown up in a powerful discharge of energy a moment later. In some cases, they may levitate in air with agony, and soon their entire systems are shredded into mere skeletal and flesh parts."
+					if("Vortex")
+						article_title = "Vortex"
+						article_img = "nodata.gif"
+						article_img_width = 179
+						article_img_height = 128
+						article_text = "An anomaly of presumably gravitational nature. When triggered, the tremendous power of the Vortex drags everything within the radius 10-15 meters towards the center. Victims drawn into the core have little to no chance of survival: their bodies are quickly constricted into a tight lump, only to be blown up in a powerful discharge of energy a moment later. In some cases, they may levitate in air with agony, and soon their entire systems are shredded into mere skeletal and flesh parts."
 
-						if("Whirligig")
-							article_title = "Whirligig"
-							article_img = "nodata.gif"
-							article_img_width = 179
-							article_img_height = 128
-							article_text = "A common and dangerous anomaly, which snatches its victims up in the air and spins them at a breakneck speed. The exact nature of the Whirligig remains unknown. The anomaly can be recognized by a light whirlwind of dust above and by body fragments scattered in the vicinity. Victims caught on its outer rim, far enough from the maximum effect zone at the center, can escape the Whirligig with relatively minor injuries."
+					if("Whirligig")
+						article_title = "Whirligig"
+						article_img = "nodata.gif"
+						article_img_width = 179
+						article_img_height = 128
+						article_text = "A common and dangerous anomaly, which snatches its victims up in the air and spins them at a breakneck speed. The exact nature of the Whirligig remains unknown. The anomaly can be recognized by a light whirlwind of dust above and by body fragments scattered in the vicinity. Victims caught on its outer rim, far enough from the maximum effect zone at the center, can escape the Whirligig with relatively minor injuries."
 
-						if("Burner")
-							article_title = "Burner"
-							article_img = "nodata.gif"
-							article_img_width = 179
-							article_img_height = 128
-							article_text = "The Burner can be a bit difficult to see, even in daylight, as it's only revealed by a faint heat haze. If the anomaly is triggered by either a living being or an object such as a metal bolt, it shoots out a tall pillar of flame in the air, burning everything in its vicinity. Though somewhat rare, the Burner anomaly is often found in clusters. Some clusters also emit extreme high ambient temperature, which hurts anything in their vicinity. Burners can emit temperatures as low as 100 degrees Celsius, up to several thousand, hot enough to crack concrete and melt metal, which explains why some Burners appear in areas that have massive cracks and severe damaged soil, while other sites are untouched."
+					if("Burner")
+						article_title = "Burner"
+						article_img = "nodata.gif"
+						article_img_width = 179
+						article_img_height = 128
+						article_text = "The Burner can be a bit difficult to see, even in daylight, as it's only revealed by a faint heat haze. If the anomaly is triggered by either a living being or an object such as a metal bolt, it shoots out a tall pillar of flame in the air, burning everything in its vicinity. Though somewhat rare, the Burner anomaly is often found in clusters. Some clusters also emit extreme high ambient temperature, which hurts anything in their vicinity. Burners can emit temperatures as low as 100 degrees Celsius, up to several thousand, hot enough to crack concrete and melt metal, which explains why some Burners appear in areas that have massive cracks and severe damaged soil, while other sites are untouched."
 
-						if("Fruit Punch")
-							article_title = "Fruit Punch"
-							article_img = "nodata.gif"
-							article_img_width = 179
-							article_img_height = 128
-							article_text = "The Fruit Punch is a puddle of lambent green liquid that is easily visible in almost any environment due to its bright glow and distinctive hissing and bubbling noises. On contact with creatures or objects such as bolts, a Fruit Punch lights up brightly and emits a sharp hissing sound. It is extremely corrosive, damaging creatures and objects on contact. Any matter left in a Fruit Punch will eventually dissolve, hinting at the anomaly's corrosive nature and spelling doom for any protective suit."
+					if("Fruit Punch")
+						article_title = "Fruit Punch"
+						article_img = "nodata.gif"
+						article_img_width = 179
+						article_img_height = 128
+						article_text = "The Fruit Punch is a puddle of lambent green liquid that is easily visible in almost any environment due to its bright glow and distinctive hissing and bubbling noises. On contact with creatures or objects such as bolts, a Fruit Punch lights up brightly and emits a sharp hissing sound. It is extremely corrosive, damaging creatures and objects on contact. Any matter left in a Fruit Punch will eventually dissolve, hinting at the anomaly's corrosive nature and spelling doom for any protective suit."
 
-						if("Burnt Fuzz")
-							article_title = "Burnt Fuzz"
-							article_img = "nodata.gif"
-							article_img_width = 179
-							article_img_height = 128
-							article_text = "This anomaly is usually found outdoors. It resembles moss or vines, hanging down like curtains from its growing spot. Reacts to rapidly approaching living beings by discharging a cloud of projectiles severely injuring uncovered or lightly protected skin upon contact. Does not react to slowly moving targets. Burnt Fuzz is generally considered the least dangerous anomaly in the Zone since it can be easily spotted and avoided."
+					if("Burnt Fuzz")
+						article_title = "Burnt Fuzz"
+						article_img = "nodata.gif"
+						article_img_width = 179
+						article_img_height = 128
+						article_text = "This anomaly is usually found outdoors. It resembles moss or vines, hanging down like curtains from its growing spot. Reacts to rapidly approaching living beings by discharging a cloud of projectiles severely injuring uncovered or lightly protected skin upon contact. Does not react to slowly moving targets. Burnt Fuzz is generally considered the least dangerous anomaly in the Zone since it can be easily spotted and avoided."
 
-						if("Radiation")
-							article_title = "Radiation"
-							article_img = "nodata.gif"
-							article_img_width = 179
-							article_img_height = 128
-							article_text = "Pockets of ionizing radiation, or simply radiation for short (areas where the ambient radiation count exceeds 50 mR per hour) can be found all over the Zone. In the outside areas, radiation tends to be dominant in wide, open spaces and on piles of scrap (such as the dirt or scrap piles in Garbage. Also cars, tractors and anything mechanical). Radiation in itself doesn't form artifacts. When you have accumulated enough radiation, you'll start to lose health; although radiation will decrease by itself (albeit very slowly) when you're outside of a radioactive area, it's often a good idea to use either Vodka, antirads, or a first aid kit to speed up the process."
+					if("Radiation")
+						article_title = "Radiation"
+						article_img = "nodata.gif"
+						article_img_width = 179
+						article_img_height = 128
+						article_text = "Pockets of ionizing radiation, or simply radiation for short (areas where the ambient radiation count exceeds 50 mR per hour) can be found all over the Zone. In the outside areas, radiation tends to be dominant in wide, open spaces and on piles of scrap (such as the dirt or scrap piles in Garbage. Also cars, tractors and anything mechanical). Radiation in itself doesn't form artifacts. When you have accumulated enough radiation, you'll start to lose health; although radiation will decrease by itself (albeit very slowly) when you're outside of a radioactive area, it's often a good idea to use either Vodka, antirads, or a first aid kit to speed up the process."
 
-						if("Mutants")
-							article_title = "Mutants"
-							article_img = "nodata.gif"
-							article_img_width = 179
-							article_img_height = 128
-							article_text = "Mutants are animals or humans who have been warped by the Zone, changing both their physical appearance and behavior, usually making them more aggressive."
+					if("Mutants")
+						article_title = "Mutants"
+						article_img = "nodata.gif"
+						article_img_width = 179
+						article_img_height = 128
+						article_text = "Mutants are animals or humans who have been warped by the Zone, changing both their physical appearance and behavior, usually making them more aggressive."
 
-						if("Blind Dog")
-							article_title = "Blind Dog"
-							article_img = "nodata.gif"
-							article_img_width = 179
-							article_img_height = 128
-							article_text = "Several generations of the dog species have lived and died since the catastrophe. Each was more affected by the Zone than the previous one. Rapid mutation lead to a vast improvement in previously peripheral abilities, frequently at the expense of primary ones. The most notable biological change was the loss of sight, paired with an uncanny development of smell. As it turned out, blind pups survived in the Zone as well as normal ones, if not better. As a result, the common dog quickly became extinct in the Zone, giving way to a new breed – that of blind dogs. The animals instinctively identify and avoid anomalies, radiation, and other invisible dangers that plague the Zone. Like their wild ancestors – the wolves – blind dogs hunt in packs. An encounter with a large group of these animals can be dangerous even to an experienced and well-armed stalker."
+					if("Blind Dog")
+						article_title = "Blind Dog"
+						article_img = "nodata.gif"
+						article_img_width = 179
+						article_img_height = 128
+						article_text = "Several generations of the dog species have lived and died since the catastrophe. Each was more affected by the Zone than the previous one. Rapid mutation lead to a vast improvement in previously peripheral abilities, frequently at the expense of primary ones. The most notable biological change was the loss of sight, paired with an uncanny development of smell. As it turned out, blind pups survived in the Zone as well as normal ones, if not better. As a result, the common dog quickly became extinct in the Zone, giving way to a new breed – that of blind dogs. The animals instinctively identify and avoid anomalies, radiation, and other invisible dangers that plague the Zone. Like their wild ancestors – the wolves – blind dogs hunt in packs. An encounter with a large group of these animals can be dangerous even to an experienced and well-armed stalker."
 
-						if("Flesh")
-							article_title = "Flesh"
-							article_img = "nodata.gif"
-							article_img_width = 179
-							article_img_height = 128
-							article_text = "Like many other living creatures, domestic pigs in The Zone underwent serious mutations following the second Chernobyl disaster, affecting genes responsible for their metabolism. This eventually caused the animal's phenotype to change significantly."
+					if("Flesh")
+						article_title = "Flesh"
+						article_img = "nodata.gif"
+						article_img_width = 179
+						article_img_height = 128
+						article_text = "Like many other living creatures, domestic pigs in The Zone underwent serious mutations following the second Chernobyl disaster, affecting genes responsible for their metabolism. This eventually caused the animal's phenotype to change significantly."
 
-						if("Snork")
-							article_title = "Snork"
-							article_img = "nodata.gif"
-							article_img_width = 179
-							article_img_height = 128
-							article_text = "The Snork is a horrifically mutated human soldier or Stalker, still wearing tattered remains of his uniform, boots and a GP-4 gas mask with cracked eyepieces, and a flailing hose. Exposure to radiation and anomalies in the wake of the second Chernobyl disaster has destroyed the human mind, leaving a feral, vicious beast psyche and a twisted body in its place, creating a dangerous predator."
+					if("Snork")
+						article_title = "Snork"
+						article_img = "nodata.gif"
+						article_img_width = 179
+						article_img_height = 128
+						article_text = "The Snork is a horrifically mutated human soldier or Stalker, still wearing tattered remains of his uniform, boots and a GP-4 gas mask with cracked eyepieces, and a flailing hose. Exposure to radiation and anomalies in the wake of the second Chernobyl disaster has destroyed the human mind, leaving a feral, vicious beast psyche and a twisted body in its place, creating a dangerous predator."
 
-						if("Boar")
-							article_title = "Boar"
-							article_img = "nodata.gif"
-							article_img_width = 179
-							article_img_height = 128
-							article_text = "Mutagenic processes engineered by radiation and anomalies have played a significant part in shaping these mammals: they have lost all fur in a few places and grown long, bristly fur in others. The animal's hooves have changed in shape and become sharper, acquiring a resemblance to claws. Also, their pupils have become colorless, while both pigmentation disorders and deep wrinkles have appeared on their bald heads. They have also grown an extra pair of tusks which are easily recognized."
+					if("Boar")
+						article_title = "Boar"
+						article_img = "nodata.gif"
+						article_img_width = 179
+						article_img_height = 128
+						article_text = "Mutagenic processes engineered by radiation and anomalies have played a significant part in shaping these mammals: they have lost all fur in a few places and grown long, bristly fur in others. The animal's hooves have changed in shape and become sharper, acquiring a resemblance to claws. Also, their pupils have become colorless, while both pigmentation disorders and deep wrinkles have appeared on their bald heads. They have also grown an extra pair of tusks which are easily recognized."
 
-						if("Artifacts")
-							article_title = "Artifacts"
-							article_img = "nodata.gif"
-							article_img_width = 179
-							article_img_height = 128
-							article_text = "Artifacts are items that have been changed by the conditions in the Zone. Most artifacts have strange and useful characteristics. For example, when kept close to the body, some artifacts create a protective field that increases its user's resilience to damage. Others may increase the user's stamina or protect against fire, etc. Artifacts are also valuable scientific study material and outside corporations would pay a hefty price to obtain one of these artifacts from the zone."
+					if("Artifacts")
+						article_title = "Artifacts"
+						article_img = "nodata.gif"
+						article_img_width = 179
+						article_img_height = 128
+						article_text = "Artifacts are items that have been changed by the conditions in the Zone. Most artifacts have strange and useful characteristics. For example, when kept close to the body, some artifacts create a protective field that increases its user's resilience to damage. Others may increase the user's stamina or protect against fire, etc. Artifacts are also valuable scientific study material and outside corporations would pay a hefty price to obtain one of these artifacts from the zone."
 
-						if("Artifacts")
-							article_title = "Artifacts"
-							article_img = "nodata.gif"
-							article_img_width = 179
-							article_img_height = 128
-							article_text = ""
+					if("Artifacts")
+						article_title = "Artifacts"
+						article_img = "nodata.gif"
+						article_img_width = 179
+						article_img_height = 128
+						article_text = ""
 
-						if("Artifacts")
-							article_title = "Artifacts"
-							article_img = "nodata.gif"
-							article_img_width = 179
-							article_img_height = 128
-							article_text = ""
+					if("Artifacts")
+						article_title = "Artifacts"
+						article_img = "nodata.gif"
+						article_img_width = 179
+						article_img_height = 128
+						article_text = ""
 
-						if("Artifacts")
-							article_title = "Artifacts"
-							article_img = "nodata.gif"
-							article_img_width = 179
-							article_img_height = 128
-							article_text = ""
+					if("Artifacts")
+						article_title = "Artifacts"
+						article_img = "nodata.gif"
+						article_img_width = 179
+						article_img_height = 128
+						article_text = ""
 
-						if("Artifacts")
-							article_title = "Artifacts"
-							article_img = "nodata.gif"
-							article_img_width = 179
-							article_img_height = 128
-							article_text = ""
+					if("Artifacts")
+						article_title = "Artifacts"
+						article_img = "nodata.gif"
+						article_img_width = 179
+						article_img_height = 128
+						article_text = ""
 
-						if("Artifacts")
-							article_title = "Artifacts"
-							article_img = "nodata.gif"
-							article_img_width = 179
-							article_img_height = 128
-							article_text = ""
-
-
-
-
-
+					if("Artifacts")
+						article_title = "Artifacts"
+						article_img = "nodata.gif"
+						article_img_width = 179
+						article_img_height = 128
+						article_text = ""
 
 		if("3")			//РЕЙТИНГ
 			if(GLOB.data_core.stalkers.len)

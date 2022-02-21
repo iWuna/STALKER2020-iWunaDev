@@ -1309,28 +1309,19 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		if("grab")
 			if(B.safezone)
-				if(M.client && (M.client.prefs.chat_toggles & CHAT_LANGUAGE))
-					to_chat(M, "<span class='warning'>You can't fight in the safezone!</span>")
-				else
-					to_chat(M, "<span class='warning'>Вы не можете трогать людей в этой зоне!</span>")
+				to_chat(M, "<span class='warning'>You can't fight in the safezone!</span>")
 				return 0
 			grab(M, H, attacker_style)
 
 		if("harm")
 			if(B.safezone)
-				if(M.client && (M.client.prefs.chat_toggles & CHAT_LANGUAGE))
-					to_chat(M, "<span class='warning'>You can't fight in the safezone!</span>")
-				else
-					to_chat(M, "<span class='warning'>Вы не можете трогать людей в этой зоне!</span>")
+				to_chat(M, "<span class='warning'>You can't fight in the safezone!</span>")
 				return 0
 			harm(M, H, attacker_style)
 
 		if("disarm")
 			if(B.safezone)
-				if(M.client && (M.client.prefs.chat_toggles & CHAT_LANGUAGE))
-					to_chat(M, "<span class='warning'>You can't fight in the safezone!</span>")
-				else
-					to_chat(M, "<span class='warning'>Вы не можете трогать людей в этой зоне!</span>")
+				to_chat(M, "<span class='warning'>You can't fight in the safezone!</span>")
 				return 0
 			disarm(M, H, attacker_style)
 

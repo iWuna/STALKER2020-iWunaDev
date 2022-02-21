@@ -7,10 +7,7 @@
 		var/mob/living/carbon/C = A
 		CheckControl(C)
 		if(SSblowout.isblowout && C.inshelter)
-			if(C.client && (C.client.prefs.chat_toggles & CHAT_LANGUAGE))
-				to_chat(C, "<big><span class='warning'>You leave the shelter.</span></big>")
-			else
-				to_chat(C, "<big><span class='warning'>Вы покидаете укрытие.</span></big>")
+			to_chat(C, "<big><span class='warning'>You leave the shelter.</span></big>")
 			C.overlay_fullscreen("blowjob", /obj/screen/fullscreen/color_vision/blowjob)
 		C.inshelter = 0
 
@@ -19,19 +16,13 @@
 		var/mob/living/carbon/C = A
 		CheckControl(C)
 		if(SSblowout.isblowout && !C.inshelter)
-			if(C.client && (C.client.prefs.chat_toggles & CHAT_LANGUAGE))
-				to_chat(C, "<big><span class='notice'>You enter the shelter.</span></big>")
-			else
-				to_chat(C, "<big><span class='notice'>Вы заходите в укрытие.</span></big>")
+			to_chat(C, "<big><span class='notice'>You enter the shelter.</span></big>")
 			C.clear_fullscreen("blowjob")
 		C.inshelter = 1
 
 /area/proc/CheckControl(var/mob/living/carbon/C)
 	if(!C.inprivatezone && controlled_by)
-		if(C.client && (C.client.prefs.chat_toggles & CHAT_LANGUAGE))
-			to_chat(C, "<big><span class='warning'>You enter the zone controlled by [controlled_by]. [controlled_by] can kill you on sight if you are not allied.</warning></big>")
-		else
-			to_chat(C, "<big><span class='warning'>Вы входите в зону, находящуюся под контролем группировки [get_rus_faction(controlled_by)]. Вы можете быть убиты, если не находитесь в дружеских отношениях с группировкой.</warning></big>")
+		to_chat(C, "<big><span class='warning'>You enter the zone controlled by [controlled_by]. [controlled_by] can kill you on sight if you are not allied.</warning></big>")
 
 	if(controlled_by)
 		C.inprivatezone = 1

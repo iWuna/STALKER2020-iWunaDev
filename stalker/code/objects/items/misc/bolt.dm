@@ -8,10 +8,7 @@
 
 /obj/item/stalker/bolts/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stalker/bolt))
-		if(user.client && (user.client.prefs.chat_toggles & CHAT_LANGUAGE))
-			user << "<span class='notice'>You place a bolt in the pile.</span>"
-		else
-			user << "<span class='notice'>Вы кладёте болт в кучу.</span>"
+		to_chat(user, "<span class='notice'>You place a bolt in the pile.</span>")
 
 /obj/item/stalker/bolt
 	name = "bolt"
@@ -70,10 +67,7 @@
 	var/obj/item/stalker/bolt/P = new /obj/item/stalker/bolt
 	P.loc = user.loc
 	user.put_in_hands(P)
-	if(user.client && (user.client.prefs.chat_toggles & CHAT_LANGUAGE))
-		user << "<span class='notice'>You take a bolt out of the pile.</span>"
-	else
-		user << "<span class='notice'>Вы достаете болт из кучи.</span>"
+	to_chat(user, "<span class='notice'>You take a bolt out of the pile.</span>")
 
 	add_fingerprint(user)
 

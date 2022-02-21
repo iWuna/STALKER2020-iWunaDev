@@ -297,10 +297,7 @@
 	. = ..()
 	var/area/B = get_area(user.loc)
 	if(B.safezone)
-		if(user.client && (user.client.prefs.chat_toggles & CHAT_LANGUAGE))
-			to_chat(user, "<span class='warning'>You can't shoot in the safezone!</span>")
-		else
-			to_chat(user, "<span class='warning'>Вы не можете стрелять в этой зоне!</span>")
+		to_chat(user, "<span class='warning'>You can't shoot in the safezone!</span>")
 		return 0
 	if(!handle_pins(user))
 		return FALSE

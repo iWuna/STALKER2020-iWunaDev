@@ -425,58 +425,28 @@ GLOBAL_LIST_INIT(global_sidormat_list, list(
 	rating = sk.fields["rating"]
 
 	var/dat
-	if(H.client.prefs.chat_toggles & CHAT_LANGUAGE)
 
-	///////////////////////////////////////////////////////////АНГЛИЙСКИЙ СИДОРОМАТ///////////////////////////////////////////////////////////////////////
-
-		dat +="<div class='statusDisplay'>"
-		dat += "Balance: [num2text(balance, 8)] RU<br>"
-		dat += "<br><br>INSTRUCTION: Put habar for sale on the <b>left</b> table.<br>" // Забирать деньги и купленные вещи - на <b>правом</b>.
-		if(switches & BUY_STUFF)
-			dat +="<A href='?src=\ref[src];choice=take'><b>Sell habar</b></A><br>"
-		if(door_device && sk.fields["degree"])
-			dat +="<A href='?src=\ref[src];basement_toggle=1'><b>Toggle basement door</b></A><br>"
-		dat += "</div>"
-		dat += "<div class='lenta_scroll'>"
-		dat += "<BR><table border='0' width='400'>" //<b>Item list:</b>
-		for(var/L in GLOB.global_sidormat_list)
-			if(L == "Unbuyable" && !(switches & SELL_UNBUYABLE))
-				continue
-			dat += "<tr><td><center><big><b>[L]</b></big></center></td><td></td><td></td></tr>"
-			for(var/datum/data/stalker_equipment/prize in GLOB.global_sidormat_list[L])
-				if((sk.fields["faction_s"] == prize.faction && ((sk.fields["faction_s"] in special_factions) || (switches & SHOW_FACTION_EQUIPMENT))) || prize.faction == "Everyone")
-					//if(rating >= prize.rating)
-					if(get_assortment_level(H) >= prize.assortment_level)
-						dat += "<tr><td>[prize.name]</td><td>[prize.cost]</td><td><A href='?src=\ref[src];purchase=\ref[prize]'>Buy</A></td></tr>"
-
-		dat += "</table>"
-		dat += "</div>"
-
-	else
-
-		///////////////////////////////////////////////////////////РУССКИЙ СИДОРОМАТ///////////////////////////////////////////////////////////////////////
-
-		dat +="<div class='statusDisplay'>"
-		dat += "На счету: [num2text(balance, 8)] RU<br>"
-		dat += "<br><br>ИНСТРУКЦИЯ: Хабар складывать - на <b>левом</b> столе.<br>" //Забирать деньги и купленные вещи - на <b>правом</b>.
-		if(switches & BUY_STUFF)
-			dat +="<A href='?src=\ref[src];choice=take'><b>Сбыть хабар</b></A><br>"
-		if(door_device && sk.fields["degree"])
-			dat +="<A href='?src=\ref[src];basement_toggle=1'><b>Открыть/Закрыть хранилище</b></A><br>"
-		dat += "</div>"
-		dat += "<div class='lenta_scroll'>"
-		dat += "<BR><table border='0' width='400'>" //<b>Список предметов:</b>
-		for(var/L in GLOB.global_sidormat_list)
-			if(L == "Unbuyable" && !(switches & SELL_UNBUYABLE))
-				continue
-			dat += "<tr><td></td><td><center><b>[L]</b></center></td><td></td><td></td></tr>"
-			for(var/datum/data/stalker_equipment/prize in GLOB.global_sidormat_list[L])
-				if((sk.fields["faction_s"] == prize.faction && ((sk.fields["faction_s"] in special_factions) || (switches & SHOW_FACTION_EQUIPMENT))) || prize.faction == "Everyone")
-					//if(rating >= prize.rating)
-					if(get_assortment_level(H) >= prize.assortment_level)
-						dat += "<tr><td><img src='data:image/jpeg;base64,[GetIconForProduct(prize)]'/></td><td>[prize.name_ru]</td><td>[prize.cost]</td><td><A href='?src=\ref[src];purchase=\ref[prize]'>Купить</A></td></tr>"
-		dat += "</table>"
-		dat += "</div>"
+	dat +="<div class='statusDisplay'>"
+	dat += "Balance: [num2text(balance, 8)] RU<br>"
+	dat += "<br><br>INSTRUCTION: Put habar for sale on the <b>left</b> table.<br>" // Забирать деньги и купленные вещи - на <b>правом</b>.
+	if(switches & BUY_STUFF)
+		dat +="<A href='?src=\ref[src];choice=take'><b>Sell habar</b></A><br>"
+	if(door_device && sk.fields["degree"])
+		dat +="<A href='?src=\ref[src];basement_toggle=1'><b>Toggle basement door</b></A><br>"
+	dat += "</div>"
+	dat += "<div class='lenta_scroll'>"
+	dat += "<BR><table border='0' width='400'>" //<b>Item list:</b>
+	for(var/L in GLOB.global_sidormat_list)
+		if(L == "Unbuyable" && !(switches & SELL_UNBUYABLE))
+			continue
+		dat += "<tr><td><center><big><b>[L]</b></big></center></td><td></td><td></td></tr>"
+		for(var/datum/data/stalker_equipment/prize in GLOB.global_sidormat_list[L])
+			if((sk.fields["faction_s"] == prize.faction && ((sk.fields["faction_s"] in special_factions) || (switches & SHOW_FACTION_EQUIPMENT))) || prize.faction == "Everyone")
+				//if(rating >= prize.rating)
+				if(get_assortment_level(H) >= prize.assortment_level)
+					dat += "<tr><td>[prize.name]</td><td>[prize.cost]</td><td><A href='?src=\ref[src];purchase=\ref[prize]'>Buy</A></td></tr>"
+	dat += "</table>"
+	dat += "</div>"
 
 	var/datum/browser/popup = new(H, "miningvendor", "SIDORMAT 3000", 450, 700)
 	popup.set_content(dat)
